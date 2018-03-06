@@ -1,0 +1,19 @@
+syntax = "proto2";
+
+import "scalapb/scalapb.proto";
+
+option (scalapb.options) = {
+  package_name: "com.abhi"
+  flat_package: true
+  single_file: true
+};
+
+message JSONEntry {
+  required uint64 ts = 1;
+  required string data = 2;
+}
+
+message JSONOutput {
+  optional string metadata = 1;
+  repeated JSONEntry entry = 2;
+}
